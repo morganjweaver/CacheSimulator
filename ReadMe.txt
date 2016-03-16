@@ -1,40 +1,29 @@
 ========================================================================
-    CONSOLE APPLICATION : hw4 Project Overview
+    CONSOLE APPLICATION : hw4 Cache Simulator
 ========================================================================
 
-AppWizard has created this hw4 application for you.
+Purpose: This program is a cache simulator which exemplified four common
+cache algorithms: FUlly Associative, Direct-Mapped, 2-Way and 4-Way Associative.
 
-This file contains a summary of what you will find in each of the files that
-make up your hw4 application.
+Input: .txt file consisting of four parameters: cache size in words (16/32/64),
+block size of 2 or 4 words, associativity code (0,1,2,4 for Direct, Fully, 2-
+and 4-way respectively), and LRU choice (0 or 1 doe off or on), each on a separate
+line.  The other file is a trace file consisting of hexadecimal memory addresses
+of 2-byte size (e.g. 0x5c41).  The program is called with the two text files
+as arguments, e.g. (in Linux) hw4 config.txt trace.txt
 
-
-hw4.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
-
-hw4.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
-
-hw4.cpp
-    This is the main application source file.
+Output: A list of each memory location from the trace file and "Hit" or "Miss"
+depending on whether the tag was found in the virtual cache.  Additional 
+information such as set index in decimal, tag values, etc. may be obtained by 
+uncommenting cout lines in each function. 
 
 /////////////////////////////////////////////////////////////////////////////
-Other standard files:
 
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named hw4.pch and a precompiled types file named StdAfx.obj.
+Compilation: Use g++ to compile the main file, e.g. g++ hw4.cpp and then
+use ./a.out config.txt trace.txt to run the program
 
 /////////////////////////////////////////////////////////////////////////////
 Other notes:
 
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
 
 /////////////////////////////////////////////////////////////////////////////
